@@ -12,7 +12,7 @@ final class Kernel extends ConsoleKernel
     /**
      * Output should be sent to /proc/1/fd/1 to be picked up by Cloudwatch.
      */
-    private const SCHEDULE_OUTPUT_PATH = '/proc/1/fd/1';
+//    private const SCHEDULE_OUTPUT_PATH = '/proc/1/fd/1';
 
     /**
      * The Artisan commands provided by your application.
