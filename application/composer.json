@@ -21,7 +21,6 @@
         "behat/behat": "^3.8",
         "dvdoug/behat-code-coverage": "^5.2",
         "friendsofphp/php-cs-fixer": "^3.8",
-        "infection/infection": "^0.26.11",
         "jetbrains/phpstorm-attributes": "^1.0",
         "nunomaduro/larastan": "v1.0.3",
         "orchestra/testbench": "^7.6",

@@ -147,5 +147,5 @@ behat-coverage:
 
 ## Mutation Testing
 mutation:
-	$(MAKE) cli-command command='./vendor/bin/infection --test-framework-options="--verbose --testsuite=Domain"';
+	$(MAKE) cli-command command='./vendor/bin/infection --test-framework-options="--verbose"';
 
