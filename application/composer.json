@@ -12,13 +12,25 @@
         "laravel/tinker": "^2.7"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0"
+        "spatie/laravel-ignition": "^1.0",
+        "behat/behat": "^3.8",
+        "dvdoug/behat-code-coverage": "^5.2",
+        "friendsofphp/php-cs-fixer": "^3.8",
+        "infection/infection": "^0.26.11",
+        "jetbrains/phpstorm-attributes": "^1.0",
+        "nunomaduro/larastan": "v1.0.3",
+        "orchestra/testbench": "^7.6",
+        "phpstan/phpstan": "^1.4",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpstan/phpstan-webmozart-assert": "^1.0",
+        "rector/rector": "^0.12.16",
+        "symplify/easy-coding-standard": "^10.1"
+
     },
     "autoload": {
         "psr-4": {
@@ -29,9 +41,10 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "LaravelTest\\": "tests/"
         }
     },
+
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
@@ -55,7 +68,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "infection/extension-installer": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
