@@ -70,7 +70,7 @@ docker-sh:
 
 ## Assign to IP on private network. Enable connection from other containers on the network.
 dc-network-local:
-	docker network inspect incentives_incentives_network >/dev/null  2>&1 || docker network create --gateway 172.16.9.1 --subnet 172.16.9.0/24 incentives_incentives_network_network || exit 0
+	docker network inspect laravel_laravel_network >/dev/null  2>&1 || docker network create --gateway 172.16.9.1 --subnet 172.16.9.0/24  laravel_laravel_network_network || exit 0
 
 ## Build/rebuild containers - e.g. use after Dockerfile update
 docker-build:
@@ -115,7 +115,7 @@ phpunit:
 
 ## Run all the Unit tests with output reported
 phpunit-report:
-	$(MAKE) cli-command command='php artisan test --log-junit Results/Incentives.xml $(test)'
+	$(MAKE) cli-command command='php artisan test --log-junit Results/Laravel.xml $(test)'
 
 ## Generate HTML Unit Test report with coverage
 phpunit-coverage-html:
