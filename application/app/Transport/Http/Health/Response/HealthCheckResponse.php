@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Transport\Http\Health\Response;
 
+use App\Application\Health\Query\Result\Data\ResourceHealth;
+use App\Application\Health\Query\Result\ServiceHealthResult;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
-use App\Application\Health\Query\Result\Data\ResourceHealth;
-use App\Application\Health\Query\Result\ServiceHealthResult;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

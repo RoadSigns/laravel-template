@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace App\Application\Health\Query;
 
-use Closure;
-use Exception;
-use Illuminate\Database\Connection;
 use App\Application\Health\Query\Result\Data\ResourceHealth;
 use App\Application\Health\Query\Result\Data\ResourceHealthList;
 use App\Application\Health\Query\Result\ServiceHealthResult;
+use Closure;
+use Exception;
 use Illuminate\Support\Facades\DB;
 use Throwable;
 
@@ -36,7 +35,7 @@ final class ServiceHealthQuery
     {
         return $this->tryService(
             'database',
-            function(): bool {
+            function (): bool {
                 try {
                     DB::connection()->getPDO();
                     DB::connection()->getDatabaseName();

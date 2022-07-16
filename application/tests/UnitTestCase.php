@@ -17,4 +17,3 @@ abstract class UnitTestCase extends TestCase
         Carbon::setTestNow();
     }
 }
-

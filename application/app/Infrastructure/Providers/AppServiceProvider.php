@@ -46,6 +46,4 @@ final class AppServiceProvider extends ServiceProvider
             'service' => 'laravel',
         ];
     }
-
-
 }
