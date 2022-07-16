@@ -9,6 +9,7 @@ parameters:
     - tests
   level: 8
   ignoreErrors:
+       - '#Parameter \#1 \$callback of method Illuminate\\Support\\Collection.*\.#'
   checkGenericClassInNonGenericObjectType: false
   parallel:
           processTimeout: 70.0
