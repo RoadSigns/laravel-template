@@ -38,7 +38,3 @@ ARG GITHUB_TOKEN
 ARG GITLAB_TOKEN
 
 RUN set -ex && apk --no-cache add openssh-client
-
-#RUN mkdir -p bootstrap/cache && \
-#  mkdir -p storage storage/framework storage/framework/sessions storage/framework/views storage/framework/cache
-#RUN chmod 775 app storage bootstrap -R

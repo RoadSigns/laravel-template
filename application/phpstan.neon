@@ -1,0 +1,14 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+    - ./vendor/phpstan/phpstan-phpunit/extension.neon
+    - ./vendor/phpstan/phpstan-webmozart-assert/extension.neon
+
+parameters:
+  paths:
+    - app
+    - tests
+  level: 8
+  ignoreErrors:
+  checkGenericClassInNonGenericObjectType: false
+  parallel:
+          processTimeout: 70.0

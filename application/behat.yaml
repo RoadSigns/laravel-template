@@ -1,0 +1,27 @@
+default:
+
+  autoload:
+    '': '%paths.base%/tests/Feature/Context'
+
+  extensions:
+    DVDoug\Behat\CodeCoverage\Extension:
+      filter:
+        include:
+          directories:
+            '%paths.base%/app': ~
+      reports:
+        cobertura:
+          target: 'Behat-Coverage.xml'
+          name: ''
+        text:
+          showColors: false
+
+  suites:
+    health:
+      paths: ["%paths.base%/tests/Feature/Health"]
+      contexts:
+        - LaravelTest\Feature\Context\HealthContext
+    shared:
+      paths: [ "%paths.base%/tests/Feature/Shared" ]
+      contexts:
+        - LaravelTest\Feature\Context\SharedContext
