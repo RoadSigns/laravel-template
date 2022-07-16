@@ -1,0 +1,58 @@
+version: '3.1'
+
+services:
+
+  laravel_nginx:
+    image: "nginx:1.23-alpine"
+    container_name: laravel_nginx
+    volumes:
+      - ../../application/public:/var/www/html/public:cached
+      - ../../build/local/nginx/default.conf:/etc/nginx/conf.d/default.conf:cached
+    ports:
+      - "8081:80"
+    depends_on:
+      - laravel_app
+    networks:
+      - laravel
+
+  laravel_app:
+    build:
+      context: ../../application/
+      dockerfile: ../Dockerfile
+      args:
+        - GITHUB_TOKEN=${GITHUB_TOKEN}
+        - GITLAB_TOKEN=${GITLAB_TOKEN}
+        - APPLICATION_ENV=development
+    image: "laravel-template"
+    container_name: laravel_app
+    volumes:
+      - ../../application:/var/www/html
+      - ~/.composer/:/home/root/.composer/
+    ports:
+      - 9010
+    env_file:
+      - ./.env
+    depends_on:
+      - laravel_database
+    networks:
+      - laravel
+
+  laravel_database:
+    image: postgres:14
+    container_name: laravel_database
+    hostname: postgres
+    ports:
+      - "5572:5432"
+    volumes:
+      - ./postgres/init_scripts:/docker-entrypoint-initdb.d/
+      - laravel_database_data:/var/lib/postgresql/data:delegated
+    env_file:
+      - ./.env
+    networks:
+      - laravel
+
+volumes:
+  laravel_database_data:
+
+networks:
+  laravel:
